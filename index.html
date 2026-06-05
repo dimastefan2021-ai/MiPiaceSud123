@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pizzeria ”Pizza la cuptor”</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="img/logo.png" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    
+
+    <!-- ======= BARA DE NAVIGARE ======= -->
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top py-xl-0 px-xl-5 wow fadeIn" data-wow-delay="0.1s">
+        <a class='navbar-brand ms-4 ms-xl-0' href='index.html'>
+            <img src="img/Emblemă.png" alt="Logo" class="logo-custom">
+        </a>
+        <span class="navbar-brand-text-mobile d-xl-none">Mi Piace</span>
+        <span class="lang-switcher-placeholder d-xl-none ms-auto me-2"></span>
+
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-label="Toggle navigation">
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <span class="navbar-brand-text d-none d-xl-inline">Mi Piace</span>
+            <div class="navbar-nav mx-auto p-4 p-xl-0">
+                <a class='nav-item nav-link active' href='index.html' data-i18n="nav_home">Acasă</a>
+                <a class='nav-item nav-link' href='index.html#menu-section' data-i18n="nav_menu">Meniu</a>
+                <a class='nav-item nav-link' href='index.html#despre-section' data-i18n="nav_about">Despre</a>
+                <a class='nav-item nav-link' href='contact.html' data-i18n="nav_contacts">Contacte</a>
+                <a class='nav-item nav-link is-hidden' href='dashboard.html' id='dashboardNavLink'
+                    title='Dashboard Admin'><i class="fas fa-tachometer-alt me-1 nav-dashboard-icon"></i><span data-i18n="nav_dashboard">Dashboard</span></a>
+
+            </div>
+            <span class="navbar-brand-text d-none d-xl-inline me-3" data-i18n="nav_brand">Pizza la cuptor</span>
+            <span class="lang-switcher-placeholder d-none d-xl-inline-flex me-3"></span>
+            <a href="tel:029932162" class="navbar-cta d-none d-xl-flex">
+                <span class="cta-pulse"></span>
+                <i class="fas fa-phone-alt me-2"></i><span data-i18n="nav_call">Sună</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ======= CARUSELUL PRINCIPAL (HEADER / HERO) ======= -->
+    <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/pizza1.1.jpeg" alt="">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-lg-8">
+                                <div class="d-flex align-items-center mb-3">
+                                    <h1 class="display-1 text-light mb-0 me-3 animated slideInDown"
+                                        id="heroSlide1Title" data-i18n="hero_slide1_title">
+                                        Gătim cu pasiune!
+                                    </h1>
+
+                                </div>
+                                <p class="text-light mb-4 pb-3 hero-description" id="heroSlide1Desc" data-i18n="hero_slide1_desc">
+                                    Pizza caldă, gust autentic și momente bune alături de cei dragi.
+                                </p>
+                                <a href="#menu-section" class="carousel-btn animated slideInUp">
+                                    <i class="fas fa-pizza-slice me-2"></i><span data-i18n="hero_btn"> Vezi Meniul</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/pizza2.1.jpg" alt="">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-lg-8">
+                                <div class="d-flex align-items-center mb-3">
+                                    <h1 class="display-1 text-light mb-0 me-3 animated slideInDown"
+                                        id="heroSlide2Title" data-i18n="hero_slide2_title">
+                                        Gătim cu pasiune!
+                                    </h1>
+
+                                </div>
+                                <p class="text-light mb-4 pb-3 hero-description" id="heroSlide2Desc" data-i18n="hero_slide2_desc">
+                                    Pizza coaptă lent pentru un gust autentic și aromat.
+                                </p>
+                                <a href="#menu-section" class="carousel-btn animated slideInUp">
+                                    <i class="fas fa-pizza-slice me-2"></i><span data-i18n="hero_btn"> Vezi Meniul</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- ======= SECȚIUNEA DESPRE NOI ======= -->
+    <div class="container-xxl py-6" id="despre-section">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="row img-twice position-relative h-100">
+                        <div class="col-6">
+                            <img class="img-fluid rounded" src="img/pizza1.1.jpeg" alt="Pizza la cuptor">
+                        </div>
+                        <div class="col-6 align-self-end">
+                            <img class="img-fluid rounded" src="img/pizza2.1.jpg" alt="Pizza proaspata">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <p class="text-primary text-uppercase mb-2" id="aboutSectionSub" data-i18n="about_sub">Povestea noastră</p>
+                    <h2 class="display-6 mb-4" id="aboutSectionTitle" data-i18n="about_title">Despre noi</h2>
+                    <p class="mb-4" id="aboutSectionText1" data-i18n="about_text1">Pizzeria noastră îți oferă preparate gustoase, pregătite zilnic din ingrediente proaspete și atent selecționate.</p>
+                    <p class="mb-4" id="aboutSectionText2" data-i18n="about_text2">Ne dorim să oferim o experiență plăcută fiecărui client, fie că alegi să ne vizitezi sau să comanzi cu livrare rapidă acasă.</p>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-check-circle text-primary me-2 fa-lg"></i>
+                                <span class="fw-600" data-i18n="about_quality">Calitate garantată</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-check-circle text-primary me-2 fa-lg"></i>
+                                <span class="fw-600" data-i18n="about_fresh">Ingrediente proaspete</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-check-circle text-primary me-2 fa-lg"></i>
+                                <span class="fw-600" data-i18n="about_delivery">Livrare rapidă</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-check-circle text-primary me-2 fa-lg"></i>
+                                <span class="fw-600" data-i18n="about_professionalism">Profesionalism</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a class='btn btn-primary mt-4 py-2 px-4' href='contact.html'>
+                        <i class="fas fa-envelope me-2"></i><span data-i18n="about_contact_btn">Contactează-ne</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <!-- ======= SECȚIUNEA MENIU CU GRILĂ DE PRODUSE ======= -->
+    <div class="container-xxl py-6" id="menu-section">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 section-title-narrow">
+                <p class="text-primary text-uppercase mb-2" data-i18n="menu_sub">Meniul Nostru</p>
+                <h1 class="display-6 mb-4" data-i18n="menu_title">Alege Pizza Preferată</h1>
+            </div>
+
+            <div class="search-container mb-4">
+                <div class="search-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="menuSearch" data-i18n-placeholder="menu_search_placeholder" placeholder="Caută pizza ta preferată, băuturi sau salate..." autocomplete="off">
+                    <button id="clearSearch" class="is-hidden"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+
+            <div class="filter-btn-group">
+                <button class="filter-btn active" data-filter="toate" data-i18n="filter_all">Toate</button>
+                <button class="filter-btn" data-filter="pizza" data-i18n="filter_pizza">Pizza</button>
+                <button class="filter-btn" data-filter="bauturi" data-i18n="filter_drinks">Băuturi</button>
+                <button class="filter-btn" data-filter="bucate_calde" data-i18n="filter_hot">Bucate Calde</button>
+                <button class="filter-btn" data-filter="salate" data-i18n="filter_salads">Salate</button>
+                <button class="filter-btn" data-filter="patiserie" data-i18n="filter_pastry">Patiserie</button>
+            </div>
+
+            
+            <div class="row g-4" id="menuGrid">
+                
+                <div class="col-12 text-center py-5" id="menuLoading">
+                    <div class="spinner-border text-primary menu-loading-spinner" role="status">
+                    </div>
+                    <p class="mt-3 text-muted" data-i18n="menu_loading">Se încarcă meniul...</p>
+                </div>
+            </div>
+
+            
+            <div class="text-center mt-5 is-hidden" id="loadMoreWrapper">
+                <button id="loadMoreBtn" class="load-more-btn" data-i18n="load_more">
+                    Arată mai multe
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container-xxl py-6">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp cards-section-intro" data-wow-delay="0.1s">
+                <p class="text-primary text-uppercase mb-2" data-i18n="cards_sub">De ce să ne alegi</p>
+                <h2 class="display-6 mb-3" data-i18n="cards_title">Povestea noastră în fiecare felie</h2>
+                <p data-i18n="cards_intro">Fiecare detaliu contează — de la ingredientele selectate cu grijă până la căldura autentică a cuptorului nostru pe lemne.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="despre-card">
+                        <div class="despre-card-icon card-icon-fire">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h5 class="despre-card-title" data-i18n="card1_title">Cuptor pe lemne</h5>
+                        <p class="despre-card-text" data-i18n="card1_text">Fiecare pizza este coaptă lent în cuptorul nostru tradițional pe lemne, pentru o crustă crocantă și un gust autentic de neegalat.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="despre-card">
+                        <div class="despre-card-icon card-icon-fresh">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h5 class="despre-card-title" data-i18n="card2_title">Ingrediente proaspete</h5>
+                        <p class="despre-card-text" data-i18n="card2_text">Selectăm zilnic ingrediente de cea mai înaltă calitate — legume proaspete, brânzeturi fine și mezeluri alese cu grijă pentru tine.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="despre-card">
+                        <div class="despre-card-icon card-icon-delivery">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h5 class="despre-card-title" data-i18n="card3_title">Livrare rapidă</h5>
+                        <p class="despre-card-text" data-i18n="card3_text">Comanda ta ajunge fierbinte și la timp, oriunde în oraș. Ne asigurăm că fiecare felie îți parvine exact cum a ieșit din cuptor.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="despre-card">
+                        <div class="despre-card-icon card-icon-quality">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h5 class="despre-card-title" data-i18n="card4_title">Calitate garantată</h5>
+                        <p class="despre-card-text" data-i18n="card4_text">Ne angajăm să oferim cele mai bune preparate la fiecare comandă. Satisfacția ta este prioritatea noastră numărul unu.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="despre-card">
+                        <div class="despre-card-icon card-icon-recipe">
+                            <i class="fas fa-pizza-slice"></i>
+                        </div>
+                        <h5 class="despre-card-title" data-i18n="card5_title">Rețete autentice</h5>
+                        <p class="despre-card-text" data-i18n="card5_text">Rețetele noastre sunt inspirate din tradițiile culinare italiene, adaptate cu dragoste pentru gusturile locale — o experiență unică.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="despre-card">
+                        <div class="despre-card-icon card-icon-passion">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h5 class="despre-card-title" data-i18n="card6_title">Gătit cu pasiune</h5>
+                        <p class="despre-card-text" data-i18n="card6_text">Fiecare preparat este realizat cu pasiune și atenție la detalii. Iubim ceea ce facem, și această bucurie se simte în fiecare mușcătură.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <button class="floating-cart-btn" id="floatingCartBtn">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+
+    
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h4 data-i18n="cart_title">Coșul Meu</h4>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <p class="text-center text-muted my-4">Coșul este gol.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span data-i18n="cart_total">Total:</span>
+                <span id="cartTotal">0 lei</span>
+            </div>
+            <div class="d-flex justify-content-between gap-2">
+                <button class="clear-cart-btn" id="clearCartBtn" data-i18n-title="cart_clear_title" title="Golește coșul"><i class="fas fa-trash-alt"></i></button>
+                <button class="checkout-btn flex-grow-1 m-0" id="checkoutBtn" data-i18n="cart_checkout">Trimite Comanda</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="pizza-banner wow fadeIn" data-wow-delay="0.1s">
+        <div class="pizza-banner-overlay"></div>
+        <div class="pizza-banner-content">
+            <p class="pizza-banner-sub" data-i18n="banner_sub">Gătit cu pasiune, servit cu drag</p>
+            <h2 class="pizza-banner-title" data-i18n="banner_title">Pizza adevărată te așteaptă!</h2>
+            <p class="pizza-banner-text" data-i18n="banner_text">Ingrediente proaspete, cuptor pe lemne și rețete autentice italiene.<br>Comandă acum și savurează fiecare felie.</p>
+            <a href="tel:029932162" class="pizza-banner-btn">
+                <i class="fa fa-phone-alt me-2"></i><span data-i18n="banner_btn">Comandă acum — 0299 32 162</span>
+            </a>
+        </div>
+    </div>
+    
+
+    
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5 justify-content-center m-0">
+                
+                <div class="col-lg-4 col-md-6 text-center text-start-lg">
+                    <h4 data-i18n="footer_contact_title">Contactează-ne</h4>
+                    <div class="d-flex flex-column align-items-center align-items-start-lg gap-2">
+                        <div class="footer-contact-item">
+                            <i class="fa fa-map-marker-alt"></i>
+                            <span>Strada Ștefan cel Mare 5, Cahul</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fa fa-phone-alt"></i>
+                            <a href="tel:029932162">0299 32 162</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:contact@pizzalacuptor.md">contact@pizzalacuptor.md</a>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center justify-content-lg-start pt-4">
+                        <a class="footer-social-btn" href="https://www.instagram.com/dvdcontinental" target="_blank"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="footer-social-btn" href="https://www.facebook.com/pizza.cahul.md" target="_blank"
+                            aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="col-lg-4 col-md-6 text-center">
+                    <h4 data-i18n="footer_hours_title">Program de Lucru</h4>
+                    <div class="footer-working-hours text-center">
+                        <i class="far fa-clock"></i>
+                        <p class="mb-1 fw-bold text-white" data-i18n="footer_days">Luni - Duminică</p>
+                        <p class="mb-0 text-primary fw-bold footer-hours-time">10:00 - 22:00</p>
+                    </div>
+                </div>
+
+                
+                <div class="col-lg-4 col-md-6 text-center text-start-lg">
+                    <h4 data-i18n="footer_links_title">Link-uri Rapide</h4>
+                    <div class="d-flex flex-column align-items-center align-items-start-lg">
+                        <a class="btn btn-link" href="index.html" data-i18n="nav_home">Acasă</a>
+                        <a class="btn btn-link" href="index.html#menu-section" data-i18n="footer_menu_link">Meniu Pizza</a>
+                        <a class="btn btn-link" href="index.html#despre-section" data-i18n="footer_about_link">Despre noi</a>
+                        <a class="btn btn-link" href="contact.html" data-i18n="footer_contact_link">Contactează-ne</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a href='index.html' class='copyright-brand-link'><b> MI PIACE </b></a> <span data-i18n="footer_copyright_text">Totul pregatit pentru tine!</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    Acest website a fost realizat în cadrul competiției ”Tekwill Junior Ambassadors”
+                    organizat de proiectul ”Tekwill în Fiecare Școală”
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/locales/ro.js"></script>
+    <script src="js/locales/ru.js"></script>
+    <script src="js/i18n.js"></script>
+
+    
+
+    
+    <div id="adminStatusBar" class="admin-status-bar is-hidden">
+        <div class="admin-status-content">
+            <span><i class="fas fa-user-shield me-2"></i> Mod Administrare Activat (<strong
+                    id="adminUserEmail"></strong>)</span>
+            <button id="adminLogoutBtn" class="admin-btn-logout"><i class="fas fa-sign-out-alt me-1"></i>
+                Ieșire</button>
+        </div>
+    </div>
+
+    
+    <div id="adminLoginModal" class="admin-inline-modal is-hidden">
+        <div class="admin-modal-box">
+            <div class="admin-modal-header">
+                <h3><i class="fas fa-lock me-2"></i> Autentificare Admin</h3>
+                <button class="admin-modal-close" onclick="closeInlineModal('adminLoginModal')">&times;</button>
+            </div>
+            <form id="inlineLoginForm" class="admin-modal-form">
+                <div class="admin-form-group">
+                    <label for="inlineEmail">Email</label>
+                    <input type="email" id="inlineEmail" placeholder="admin@mipiace.md" required autocomplete="email">
+                </div>
+                <div class="admin-form-group">
+                    <label for="inlinePassword">Parolă</label>
+                    <input type="password" id="inlinePassword" placeholder="••••••••" required
+                        autocomplete="current-password">
+                </div>
+                <div id="inlineLoginError" class="admin-error-msg is-hidden"></div>
+                <button type="submit" class="admin-btn-submit" id="inlineLoginSubmitBtn">Conectare</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div id="inlineProductModal" class="admin-inline-modal is-hidden">
+        <div class="admin-modal-box admin-modal-large">
+            <div class="admin-modal-header">
+                <h3 id="inlineProductModalTitle"><i class="fas fa-plus-circle me-2"></i> <span data-i18n="product_add_title">Adaugă Produs Nou</span></h3>
+                <button class="admin-modal-close" onclick="closeInlineModal('inlineProductModal')">&times;</button>
+            </div>
+            <form id="inlineProductForm" class="admin-modal-form">
+                <input type="hidden" id="inlineProductId">
+
+                <div class="admin-form-row">
+                    <div class="admin-form-group">
+                        <label for="inlineProductName" data-i18n="product_name_label">Nume produs *</label>
+                        <input type="text" id="inlineProductName" placeholder="ex: Pizza Capriciosa" data-i18n-placeholder="product_name_placeholder" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="inlineProductNameRu" data-i18n="dash_modal_name_ru_label">Nume produs (RU) *</label>
+                        <input type="text" id="inlineProductNameRu" placeholder="ex: Пицца Капричоза" data-i18n-placeholder="dash_modal_name_ru_placeholder" required>
+                    </div>
+                </div>
+
+                <div class="admin-form-row">
+                    <div class="admin-form-group">
+                        <label for="inlineProductCategory" data-i18n="product_category_label">Categorie *</label>
+                        <select id="inlineProductCategory" required>
+                            <option value="" data-i18n="cat_choose">— Alege categoria —</option>
+                            <option value="pizza" data-i18n="cat_pizza">Pizza</option>
+                            <option value="bauturi" data-i18n="cat_bauturi">Băuturi</option>
+                            <option value="bucate_calde" data-i18n="cat_bucate_calde">Bucate Calde</option>
+                            <option value="salate" data-i18n="cat_salate">Salate</option>
+                            <option value="patiserie" data-i18n="cat_patiserie">Patiserie</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="inlineProductPrice" data-i18n="product_price_label">Preț (lei) *</label>
+                        <input type="number" id="inlineProductPrice" placeholder="125" step="0.01" min="0" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="inlineProductOrder" data-i18n="product_order_label">Ordine afișare</label>
+                        <input type="number" id="inlineProductOrder" placeholder="0" min="0" value="0">
+                    </div>
+                </div>
+
+                <div class="admin-form-group">
+                    <label for="inlineProductDescription" data-i18n="product_description_label">Descriere</label>
+                    <textarea id="inlineProductDescription" rows="2"
+                        placeholder="Ingrediente, gramaj etc..." data-i18n-placeholder="product_description_placeholder"></textarea>
+                </div>
+
+                <div class="admin-form-group">
+                    <label for="inlineProductDescriptionRu" data-i18n="dash_modal_desc_ru_label">Descriere (RU)</label>
+                    <textarea id="inlineProductDescriptionRu" rows="2"
+                        placeholder="ex: Томатный соус, моцарелла, ветчина..." data-i18n-placeholder="dash_modal_desc_ru_placeholder"></textarea>
+                </div>
+
+                <div class="admin-form-group">
+                    <label for="inlineProductImage" data-i18n="product_image_label">Cale Imagine / URL</label>
+                    <input type="text" id="inlineProductImage" placeholder="ex: img/pizza.jpg" data-i18n-placeholder="product_image_placeholder">
+                </div>
+
+                <div class="admin-form-group checkbox-wrapper">
+                    <label class="admin-checkbox-label">
+                        <input type="checkbox" id="inlineProductAvailable" checked>
+                        <span data-i18n="product_available">Disponibil pe site (vizibil)</span>
+                    </label>
+                </div>
+
+                <div class="admin-modal-footer">
+                    <button type="button" class="admin-btn-secondary"
+                        onclick="closeInlineModal('inlineProductModal')" data-i18n="product_cancel">Anulează</button>
+                    <button type="submit" class="admin-btn-primary" id="inlineProductSaveBtn" data-i18n="product_save">Salvează</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+    <div id="inlineDeleteModal" class="admin-inline-modal is-hidden">
+        <div class="admin-modal-box admin-modal-danger">
+            <div class="admin-modal-header">
+                <h3><i class="fas fa-exclamation-triangle me-2"></i> Ștergere Produs</h3>
+                <button class="admin-modal-close" onclick="closeInlineModal('inlineDeleteModal')">&times;</button>
+            </div>
+            <div class="admin-modal-body text-center p-4">
+                <p>Sigur dorești să ștergi produsul:</p>
+                <h4 id="inlineDeleteProductName" class="inline-delete-product-name"></h4>
+                <p class="small text-muted">Această acțiune este permanentă și ireversibilă!</p>
+            </div>
+            <div class="admin-modal-footer">
+                <button type="button" class="admin-btn-secondary"
+                    onclick="closeInlineModal('inlineDeleteModal')">Anulează</button>
+                <button type="button" class="admin-btn-danger" id="inlineConfirmDeleteBtn">Șterge definitiv</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="checkoutModal" class="admin-inline-modal is-hidden">
+        <div class="admin-modal-box">
+            <div class="admin-modal-header checkout-header-success">
+                <h3 class="checkout-title-light"><i class="fas fa-shopping-bag me-2"></i> Finalizează Comanda</h3>
+                <button class="admin-modal-close" onclick="closeInlineModal('checkoutModal')">&times;</button>
+            </div>
+            <form id="checkoutForm" class="admin-modal-form">
+                <div id="checkoutSummary" class="checkout-summary">
+                    
+                </div>
+                <div class="admin-form-group">
+                    <label for="checkoutName"><i class="fas fa-user me-1"></i> Numele tău *</label>
+                    <input type="text" id="checkoutName" placeholder="ex: Ion Popescu" required>
+                </div>
+                <div class="admin-form-group">
+                    <label for="checkoutPhone"><i class="fas fa-phone me-1"></i> Telefon *</label>
+                    <input type="tel" id="checkoutPhone" placeholder="ex: 069 123 456" required>
+                </div>
+                <div class="admin-form-group">
+                    <label for="checkoutAddress"><i class="fas fa-map-marker-alt me-1"></i> Adresa de livrare
+                        (opțional)</label>
+                    <input type="text" id="checkoutAddress" placeholder="ex: str. Ștefan cel Mare 15, ap. 3">
+                </div>
+                <div class="admin-form-group">
+                    <label for="checkoutNotes"><i class="fas fa-comment me-1"></i> Observații (opțional)</label>
+                    <textarea id="checkoutNotes" rows="2" placeholder="ex: fără ceapă, etaj 3"></textarea>
+                </div>
+                <div id="checkoutError" class="admin-error-msg is-hidden"></div>
+                <button type="submit" class="admin-btn-submit checkout-submit-success" id="checkoutSubmitBtn">
+                    <i class="fas fa-paper-plane me-2"></i> Trimite Comanda
+                </button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div id="inlineOrdersModal" class="admin-inline-modal is-hidden">
+        <div class="admin-modal-box admin-modal-xlarge">
+            <div class="admin-modal-header inline-orders-header">
+                <h3><i class="fas fa-clipboard-list me-2"></i> Panou Comenzi (Mod Admin)</h3>
+                <div class="inline-orders-toolbar">
+                    <select id="inlineFilterOrderStatus" class="admin-select inline-orders-filter">
+                        <option value="toate">Toate statusurile</option>
+                        <option value="nouă">Noi</option>
+                        <option value="în pregătire">În pregătire</option>
+                        <option value="finalizată">Finalizate</option>
+                        <option value="anulată">Anulate</option>
+                    </select>
+                    <button id="inlineRefreshOrdersBtn" class="admin-btn-logout inline-refresh-btn"><i
+                            class="fas fa-sync-alt"></i></button>
+                </div>
+                <button class="admin-modal-close" onclick="closeInlineModal('inlineOrdersModal')">&times;</button>
+            </div>
+            <div class="admin-modal-body-scrollable" id="inlineOrdersContainer">
+                <div class="inline-loading-state">
+                    <i class="fas fa-spinner fa-spin fa-2x mb-3 inline-loading-icon"></i>
+                    <p>Se încarcă comenzile...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+
+    <script src="js/main.js"></script>
+
+    
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0 position-relative">
+                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
+                <img id="modalImage" src="" class="img-fluid rounded mx-auto d-block" alt="Preview imagine">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

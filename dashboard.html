@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8">
+    <title>Panou Administrare — Pizza la cuptor</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="img/logo.png" rel="icon">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+
+    
+    <!-- ======= BARA DE NAVIGARE DEDICATĂ PANOULUI DE ADMINISTRARE ======= -->
+    <nav class="admin-dedicated-nav">
+        
+        <a class='admin-nav-brand' href='index.html' title='Înapoi la Site'>
+            <img src="img/Emblemă.png" alt="Logo" class="admin-nav-logo-img">
+            <div class="admin-nav-brand-text">
+                <span class="admin-nav-brand-title" data-i18n="dash_panel_title"><i
+                        class="fas fa-user-shield me-2"></i>Panou Administrare</span>
+                <span class="admin-nav-brand-sub" data-i18n="dash_brand_sub">Pizza la cuptor</span>
+            </div>
+        </a>
+
+        
+        <div class="admin-nav-center">
+            <a class='admin-nav-link' href='index.html'>
+                <i class="fas fa-home"></i> <span data-i18n="dash_nav_home">Înapoi la Site</span>
+            </a>
+            <div class="admin-nav-divider"></div>
+            <a class='admin-nav-link active-link' href='dashboard.html'>
+                <i class="fas fa-tachometer-alt"></i> <span data-i18n="dash_nav_dashboard">Dashboard</span>
+            </a>
+            <div class="admin-nav-divider"></div>
+            <a class='admin-nav-link' href='contact.html'>
+                <i class="fas fa-envelope"></i> <span data-i18n="dash_nav_contacts">Contacte</span>
+            </a>
+        </div>
+
+        
+        <div class="admin-nav-right">
+            <span class="lang-switcher-placeholder d-inline-flex me-2"></span>
+            <div class="admin-nav-user-info is-hidden" id="adminNavUserInfo">
+                <span class="admin-nav-status-dot"></span>
+                <span class="admin-nav-email" id="adminNavEmail"></span>
+            </div>
+            <button class="admin-nav-logout is-hidden" id="adminNavLogout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span data-i18n="dash_nav_logout">Ieșire</span>
+            </button>
+        </div>
+    </nav>
+
+    
+    <!-- ======= CONTAINERUL PRINCIPAL AL DASHBOARD-ULUI ======= -->
+    <div class="dashboard-wrapper">
+        <div class="container-fluid px-lg-5">
+
+            
+            <!-- Ecranul de autentificare – vizibil doar când utilizatorul nu este logat -->
+            <div id="loginScreen" class="login-screen login-screen-compact is-hidden">
+                <div class="login-container">
+                    <div class="login-logo">
+                        <img src="img/logo.png" alt="Mi Piace Logo">
+                    </div>
+                    <h1 class="login-title" data-i18n="dash_login_title">Panou Administrare</h1>
+                    <p class="login-subtitle" data-i18n="dash_login_subtitle">Pizzeria "Pizza la cuptor"</p>
+
+                    <form id="loginForm" class="login-form">
+                        <div class="form-group">
+                            <label for="loginEmail"><i class="fas fa-envelope"></i> <span
+                                    data-i18n="dash_email_label">Email</span></label>
+                            <input type="email" id="loginEmail" placeholder="admin@mipiace.md"
+                                data-i18n-placeholder="dash_email_placeholder" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword"><i class="fas fa-lock"></i> <span
+                                    data-i18n="dash_password_label">Parolă</span></label>
+                            <input type="password" id="loginPassword" placeholder="••••••••"
+                                data-i18n-placeholder="dash_password_placeholder" required
+                                autocomplete="current-password">
+                        </div>
+                        <div id="loginError" class="error-message is-hidden"></div>
+                        <button type="submit" class="login-btn" id="loginBtn">
+                            <i class="fas fa-sign-in-alt me-2"></i> <span data-i18n="dash_login_btn">Intră în
+                                Panou</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            
+            <!-- Panoul admin principal – vizibil doar după autentificare -->
+            <div id="adminDashboard" class="admin-dashboard is-hidden">
+
+                
+                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3 px-3">
+                    <div>
+                        <h2 class="text-light mb-0"><i class="fas fa-user-shield text-primary me-2"></i><span
+                                data-i18n="dash_header_title">Panou Administrare</span></h2>
+                        <small class="text-muted" id="adminEmailDisplay"></small>
+                    </div>
+                    <div>
+                        <button id="logoutBtn" class="logout-btn">
+                            <i class="fas fa-sign-out-alt me-2"></i><span data-i18n="dash_logout_btn">Ieșire din
+                                cont</span>
+                        </button>
+                    </div>
+                </div>
+
+                
+                <!-- Carduri cu statistici rapide: total produse, pizza, băuturi, mesaje noi -->
+                <div class="stats-container px-0">
+                    <div class="stat-card stat-total">
+                        <i class="fas fa-box-open"></i>
+                        <div>
+                            <span class="stat-number" id="statTotal">0</span>
+                            <span class="stat-label" data-i18n="dash_stat_total">Total Produse</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-pizza">
+                        <i class="fas fa-pizza-slice"></i>
+                        <div>
+                            <span class="stat-number" id="statPizza">0</span>
+                            <span class="stat-label" data-i18n="dash_stat_pizza">Pizza</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-bauturi">
+                        <i class="fas fa-glass-cheers"></i>
+                        <div>
+                            <span class="stat-number" id="statBauturi">0</span>
+                            <span class="stat-label" data-i18n="dash_stat_drinks">Băuturi</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-altele">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <span class="stat-number" id="statMessages">0</span>
+                            <span class="stat-label" data-i18n="dash_stat_messages">Mesaje noi</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Taburi de navigare: Produse / Comenzi / Mesaje -->
+                <div class="admin-tabs px-0">
+                    <button class="admin-tab active" data-tab="produse" id="tabProduse">
+                        <i class="fas fa-pizza-slice"></i> <span data-i18n="dash_tab_products">Produse</span>
+                    </button>
+                    <button class="admin-tab" data-tab="comenzi" id="tabComenzi">
+                        <i class="fas fa-clipboard-list"></i> <span data-i18n="dash_tab_orders">Comenzi</span>
+                        <span class="tab-badge is-hidden" id="ordersCount">0</span>
+                    </button>
+                    <button class="admin-tab" data-tab="mesaje" id="tabMesaje">
+                        <i class="fas fa-envelope"></i> <span data-i18n="dash_tab_messages">Mesaje inbox</span>
+                        <span class="tab-badge is-hidden" id="messagesCount">0</span>
+                    </button>
+                </div>
+
+                
+                <!-- ======= FILA: GESTIONARE PRODUSE ======= -->
+                <div id="tabContentProduse" class="tab-content active mt-4">
+                    <div class="admin-section-card">
+                        
+                        <div class="actions-bar px-0 mb-3">
+                            <div class="actions-left">
+                                <h3 class="mb-0"><i class="fas fa-list"></i> <span data-i18n="dash_products_title">Listă
+                                        Produse</span></h3>
+                                <div class="filter-group">
+                                    <select id="filterCategory" class="admin-select">
+                                        <option value="toate" data-i18n="cat_all">Toate categoriile</option>
+                                        <option value="pizza" data-i18n="cat_pizza">Pizza</option>
+                                        <option value="bauturi" data-i18n="cat_bauturi">Băuturi</option>
+                                        <option value="bucate_calde" data-i18n="cat_bucate_calde">Bucate Calde</option>
+                                        <option value="salate" data-i18n="cat_salate">Salate</option>
+                                        <option value="patiserie" data-i18n="cat_patiserie">Patiserie</option>
+                                    </select>
+                                    <input type="text" id="searchProduct" placeholder="Caută produs..."
+                                        data-i18n-placeholder="dash_search_placeholder" class="admin-search">
+                                </div>
+                            </div>
+                            <button id="addProductBtn" class="add-product-btn">
+                                <i class="fas fa-plus"></i> <span data-i18n="dash_add_product_btn">Adaugă Produs</span>
+                            </button>
+                        </div>
+
+                        
+                        <div class="table-container px-0">
+                            <table class="products-table">
+                                <thead>
+                                    <tr>
+                                        <th class="table-col-order" title="Click pentru a sorta după numărul de ordine" data-i18n="dash_table_ord" onclick="sortByOrder()">Ord ↕</th>
+                                        <th class="table-col-image" data-i18n="dash_table_img">Img</th>
+                                        <th data-i18n="dash_table_name">Nume</th>
+                                        <th data-i18n="dash_table_category">Categorie</th>
+                                        <th data-i18n="dash_table_price">Preț</th>
+                                        <th data-i18n="dash_table_description">Descriere</th>
+                                        <th class="table-col-actions" data-i18n="dash_table_actions">Acțiuni</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productsTableBody">
+                                    <tr>
+                                        <td colspan="7" class="loading-cell">
+                                            <i class="fas fa-spinner fa-spin"></i> <span data-i18n="menu_loading">Se
+                                                încarcă produsele...</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        
+                        <div id="emptyState" class="empty-state is-hidden">
+                            <i class="fas fa-inbox"></i>
+                            <h4 data-i18n="dash_empty_products">Niciun produs găsit</h4>
+                            <p data-i18n="dash_empty_products_hint">Adaugă primul produs folosind butonul de mai sus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- ======= FILA: GESTIONARE COMENZI ======= -->
+                <div id="tabContentComenzi" class="tab-content mt-4 is-hidden">
+                    <div class="admin-section-card">
+                        <div class="actions-bar px-0 mb-3">
+                            <div class="actions-left">
+                                <h3 class="mb-0"><i class="fas fa-clipboard-list"></i> <span
+                                        data-i18n="dash_orders_title">Comenzi Recente</span></h3>
+                                <div class="filter-group">
+                                    <select id="filterOrderStatus" class="admin-select">
+                                        <option value="toate" data-i18n="orders_status_all">Toate statusurile</option>
+                                        <option value="nouă" data-i18n="orders_status_new">Noi</option>
+                                        <option value="în pregătire" data-i18n="orders_status_preparing">În pregătire
+                                        </option>
+                                        <option value="finalizată" data-i18n="orders_status_done">Finalizate</option>
+                                        <option value="anulată" data-i18n="orders_status_cancelled">Anulate</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button id="refreshOrdersBtn" class="add-product-btn admin-refresh-btn">
+                                <i class="fas fa-sync-alt"></i> <span data-i18n="dash_refresh">Reîmprospătează</span>
+                            </button>
+                        </div>
+
+                        <div id="ordersContainer" class="px-0">
+                            <div class="loading-cell">
+                                <i class="fas fa-spinner fa-spin"></i> <span data-i18n="menu_loading">Se încarcă
+                                    comenzile...</span>
+                            </div>
+                        </div>
+
+                        <div id="emptyOrders" class="empty-state is-hidden">
+                            <i class="fas fa-clipboard-check"></i>
+                            <h4 data-i18n="dash_empty_orders">Nicio comandă încă</h4>
+                            <p data-i18n="dash_empty_orders_hint">Comenzile plasate de clienți vor apărea aici automat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- ======= FILA: INBOX MESAJE DE CONTACT ======= -->
+                <div id="tabContentMesaje" class="tab-content mt-4 is-hidden">
+                    <div class="admin-section-card">
+                        <div class="actions-bar px-0 mb-3">
+                            <div class="actions-left">
+                                <h3 class="mb-0"><i class="fas fa-envelope"></i> <span
+                                        data-i18n="dash_messages_title">Mesaje Contact</span></h3>
+                                <div class="filter-group">
+                                    <select id="filterMessagesStatus" class="admin-select">
+                                        <option value="toate" data-i18n="dash_all_messages">Toate mesajele</option>
+                                        <option value="necitit" data-i18n="dash_unread_filter">✉️ Necitite</option>
+                                        <option value="citit" data-i18n="dash_read_filter">📖 Citite</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button id="refreshMessagesBtn" class="add-product-btn admin-refresh-btn">
+                                <i class="fas fa-sync-alt"></i> <span data-i18n="dash_refresh">Reîmprospătează</span>
+                            </button>
+                        </div>
+
+                        <div id="messagesContainer">
+                            <div class="loading-cell">
+                                <i class="fas fa-spinner fa-spin"></i> <span data-i18n="menu_loading">Se încarcă
+                                    mesajele...</span>
+                            </div>
+                        </div>
+
+                        <div id="emptyMessages" class="empty-state is-hidden">
+                            <i class="fas fa-inbox"></i>
+                            <h4 data-i18n="dash_empty_inbox">Inbox gol</h4>
+                            <p data-i18n="dash_empty_inbox_hint">Mesajele trimise din formularul de contact vor apărea
+                                aici.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    
+    <!-- ======= MODAL POP-UP: ADAUGĂ / EDITEAZĂ PRODUS ======= -->
+    <div id="productModal" class="modal-overlay is-hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle"><i class="fas fa-plus-circle"></i> <span data-i18n="dash_modal_add_title">Adaugă
+                        Produs</span></h3>
+                <button class="modal-close" id="closeModal"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="productForm" class="product-form">
+                <input type="hidden" id="productId">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productName" data-i18n="dash_modal_name_label">Nume produs *</label>
+                        <input type="text" id="productName" placeholder="ex: Pizza Capriciosa"
+                            data-i18n-placeholder="dash_modal_name_placeholder" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productNameRu" data-i18n="dash_modal_name_ru_label">Nume produs (RU) *</label>
+                        <input type="text" id="productNameRu" placeholder="ex: Пицца Капричоза"
+                            data-i18n-placeholder="dash_modal_name_ru_placeholder" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productCategory" data-i18n="dash_modal_category_label">Categorie *</label>
+                        <select id="productCategory" required>
+                            <option value="" data-i18n="cat_choose">— Alege categoria —</option>
+                            <option value="pizza" data-i18n="cat_pizza">Pizza</option>
+                            <option value="bauturi" data-i18n="cat_bauturi">Băuturi</option>
+                            <option value="bucate_calde" data-i18n="cat_bucate_calde">Bucate Calde</option>
+                            <option value="salate" data-i18n="cat_salate">Salate</option>
+                            <option value="patiserie" data-i18n="cat_patiserie">Patiserie</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice" data-i18n="dash_modal_price_label">Preț (lei) *</label>
+                        <input type="number" id="productPrice" placeholder="125" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productOrder" data-i18n="dash_modal_order_label">Ordine afișare</label>
+                        <input type="number" id="productOrder" placeholder="1"
+                            data-i18n-placeholder="dash_modal_order_placeholder" min="0" value="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="productDescription" data-i18n="dash_modal_desc_label">Descriere</label>
+                    <textarea id="productDescription" rows="2"
+                        placeholder="ex: Sos de roșii, mozzarella, șuncă, ciuperci..."
+                        data-i18n-placeholder="dash_modal_desc_placeholder"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="productDescriptionRu" data-i18n="dash_modal_desc_ru_label">Descriere (RU)</label>
+                    <textarea id="productDescriptionRu" rows="2" placeholder="ex: Томатный соус, моцарелла, ветчина..."
+                        data-i18n-placeholder="dash_modal_desc_ru_placeholder"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="text-primary"><i class="fas fa-image me-1"></i> <span
+                            data-i18n="dash_modal_image_section">Imagine produs</span></label>
+
+                    
+                    <div class="drag-drop-zone" id="imageDragDropZone">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <p class="mb-1 text-light" data-i18n="dash_modal_drag_text">Trage imaginea aici sau dă click
+                            pentru a o selecta</p>
+                        <small class="text-muted d-block admin-small-hint"
+                            data-i18n="dash_modal_formats">Formate acceptate: PNG, JPG, JPEG (optimizat automat)</small>
+                        <input type="file" id="imageFileInput" accept="image/*" class="is-hidden">
+                    </div>
+
+                    
+                    <div id="imageUploadProgress" class="text-center py-2 is-hidden">
+                        <i class="fas fa-spinner fa-spin text-primary me-2"></i>
+                        <span class="text-light upload-status-text" id="uploadStatusText"
+                            data-i18n="dash_modal_processing">Se procesează imaginea...</span>
+                    </div>
+
+                    
+                    <div class="image-preview-container is-hidden" id="imagePreviewContainer">
+                        <img src="" alt="Preview" id="imagePreviewImg" class="product-thumb-preview">
+                        <button type="button" class="btn-remove-image" id="removeImageBtn" title="Elimină imaginea">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    
+                    <div class="mt-3">
+                        <label for="productImage" class="product-url-label"
+                            data-i18n="dash_modal_url_label">Cale sau URL direct imagine</label>
+                        <input type="text" id="productImage" placeholder="img/pizza1.1.jpeg sau https://..."
+                            data-i18n-placeholder="dash_modal_url_placeholder">
+                        <small class="form-hint" data-i18n="dash_modal_url_hint">Câmp completat automat. Poți edita sau
+                            introduce și căi manuale.</small>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="productAvailable" checked>
+                        <span data-i18n="dash_modal_available">Produs disponibil (vizibil pe site)</span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" id="cancelModal"
+                        data-i18n="dash_modal_cancel">Anulează</button>
+                    <button type="submit" class="btn-save" id="saveBtn">
+                        <i class="fas fa-save"></i> <span data-i18n="dash_modal_save">Salvează</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+    <!-- ======= MODAL POP-UP: CONFIRMARE ȘTERGERE PRODUS ======= -->
+    <div id="deleteModal" class="modal-overlay is-hidden">
+        <div class="modal-content modal-small">
+            <div class="modal-header modal-header-danger">
+                <h3><i class="fas fa-exclamation-triangle"></i> <span
+                        data-i18n="dash_delete_confirm_modal_title">Confirmare Ștergere</span></h3>
+                <button class="modal-close" id="closeDeleteModal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="delete-body">
+                <p class="text-light" data-i18n="dash_delete_confirm">Ești sigur că vrei să ștergi produsul:</p>
+                <h4 id="deleteProductName" class="delete-product-name"></h4>
+                <p class="delete-warning" data-i18n="dash_delete_warning">Această acțiune este ireversibilă!</p>
+            </div>
+            <div class="form-actions">
+                <button class="btn-cancel" id="cancelDelete" data-i18n="dash_delete_cancel">Anulează</button>
+                <button class="btn-delete" id="confirmDelete">
+                    <i class="fas fa-trash-alt"></i> <span data-i18n="dash_delete_btn">Șterge definitiv</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Notificare toast pentru feedback rapid (succes / eroare) -->
+    <div id="toast" class="toast is-hidden">
+        <i class="toast-icon"></i>
+        <span class="toast-message"></span>
+    </div>
+
+    
+    <!-- ======= SUBSOLUL PAGINII ======= -->
+    <footer class="bg-dark text-light py-5 border-top border-secondary">
+        <div class="row g-5 justify-content-center text-center m-0">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-light mb-4" data-i18n="dash_footer_address_title">Adresa Oficiului</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-2"></i>Strada Stefan cel Mare 5</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-2"></i>0299 32 162</p>
+                <div class="d-flex justify-content-center pt-3">
+                    <a class="btn btn-square btn-outline-light rounded-circle me-2"
+                        href="https://www.instagram.com/dvdcontinental"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-square btn-outline-light rounded-circle me-2"
+                        href="https://www.facebook.com/pizza.cahul.md"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-light mb-4" data-i18n="dash_footer_links_title">Meniu și Informații</h4>
+                <div class="d-flex flex-column align-items-center">
+                    <a class='btn btn-link' href='index.html#despre-section' data-i18n="dash_footer_about">Despre
+                        noi</a>
+                    <a class='btn btn-link' href='index.html#menu-section' data-i18n="dash_footer_menu">Meniu Pizza</a>
+                    <a class='btn btn-link' href='contact.html' data-i18n="dash_footer_contact">Contactează-ne</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <!-- ======= SCRIPTURI: FIREBASE, JQUERY, BOOTSTRAP, I18N, LOGICĂ DASHBOARD ======= -->
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+
+    
+    <script src="js/locales/ro.js"></script>
+    <script src="js/locales/ru.js"></script>
+    <script src="js/i18n.js"></script>
+
+    
+    <script src="js/dashboard.js"></script>
+
+    
+    <script>
+        (function () {
+            var navUserInfo = document.getElementById('adminNavUserInfo');
+            var navEmail = document.getElementById('adminNavEmail');
+            var navLogout = document.getElementById('adminNavLogout');
+
+            auth.onAuthStateChanged(function (user) {
+                if (user) {
+                    if (navEmail) navEmail.textContent = user.email;
+                    if (navUserInfo) navUserInfo.style.display = 'flex';
+                    if (navLogout) navLogout.style.display = 'flex';
+                } else {
+                    if (navUserInfo) navUserInfo.style.display = 'none';
+                    if (navLogout) navLogout.style.display = 'none';
+                }
+            });
+
+            if (navLogout) {
+                navLogout.addEventListener('click', function () {
+                    auth.signOut().then(function () {
+                        window.location.href = 'index.html';
+                    });
+                });
+            }
+        })();
+    </script>
+
+</body>
+
+</html>

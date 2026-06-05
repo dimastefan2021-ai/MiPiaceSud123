@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8">
+    <title>Contacte — Pizzeria ”Pizza la cuptor”</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="img/logo.png" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container-fluid top-bar bg-dark text-light px-0 wow fadeIn is-hidden" data-wow-delay="0.1s">
+        <div class="row gx-0 align-items-center d-none d-lg-flex is-hidden">
+            <div class="col-lg-4 px-5 text-start">
+                <div class="top-bar-info">
+                    <span class="top-bar-item"><i class="fas fa-map-marker-alt me-2"></i>Str. Stefan cel Mare 5</span>
+                    <span class="top-bar-divider">|</span>
+                    <span class="top-bar-item"><i class="fas fa-clock me-2"></i>10:00 - 22:00</span>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <a href="tel:029932162" class="top-bar-phone">
+                    <i class="fas fa-phone-alt me-2"></i>0299 32 162
+                </a>
+            </div>
+            <div class="col-lg-4 px-5 text-end">
+                <small class="me-2 top-follow-label">Urmăriți-ne:</small>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="social-icon-top" href="https://www.instagram.com/dvdcontinental" target="_blank"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="social-icon-top" href="https://www.facebook.com/pizza.cahul.md" target="_blank"
+                        aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bara principala de navigare: pastreaza acces rapid catre paginile site-ului,
+         comutatorul de limba, butonul de apel si linkul ascuns catre dashboard.
+         Linkul dashboard devine vizibil doar cand utilizatorul este autentificat ca admin. -->
+
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top py-xl-0 px-xl-5 wow fadeIn" data-wow-delay="0.1s">
+        <a class='navbar-brand ms-4 ms-xl-0' href='index.html'>
+            <img src="img/Emblemă.png" alt="Logo" class="logo-custom">
+        </a>
+        <span class="navbar-brand-text-mobile d-xl-none">Mi Piace</span>
+        <span class="lang-switcher-placeholder d-xl-none ms-auto me-2"></span>
+
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-label="Toggle navigation">
+            <div class="hamburger-icon">
+
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <span class="navbar-brand-text d-none d-xl-inline">Mi Piace</span>
+            <div class="navbar-nav mx-auto p-4 p-xl-0">
+                <a class='nav-item nav-link' href='index.html' data-i18n="nav_home">Acasă</a>
+                <a class='nav-item nav-link' href='index.html#menu-section' data-i18n="nav_menu">Meniu</a>
+                <a class='nav-item nav-link' href='about.html' data-i18n="nav_about">Despre</a>
+                <a class='nav-item nav-link active' href='contact.html' data-i18n="nav_contacts">Contacte</a>
+                <a class='nav-item nav-link is-hidden' href='dashboard.html' id='dashboardNavLink'
+                    title='Dashboard Admin' data-i18n="nav_dashboard"><i class="fas fa-tachometer-alt me-1"
+                        class="fas fa-tachometer-alt me-1 nav-dashboard-icon"></i>Dashboard</a>
+
+            </div>
+            <span class="navbar-brand-text d-none d-xl-inline me-3" data-i18n="nav_brand">Pizza la cuptor</span>
+            <span class="lang-switcher-placeholder d-none d-xl-inline-flex me-3"></span>
+            <a href="tel:029932162" class="navbar-cta d-none d-xl-flex">
+                <span class="cta-pulse"></span>
+                <i class="fas fa-phone-alt me-2"></i><span data-i18n="nav_call">Sună</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Antetul paginii de contact: afiseaza titlul paginii si breadcrumb-ul,
+         ca vizitatorul sa inteleaga rapid unde se afla in structura site-ului. -->
+    <div class="container-fluid page-header py-6 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center pt-5 pb-3">
+            <h1 class="display-4 text-white animated slideInDown mb-3" data-i18n="contact_page_header">Aici ne aflăm</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href='index.html' data-i18n="about_breadcrumb_home">Acasă</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page" data-i18n="contact_breadcrumb_current">Contacte</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Sectiunea principala de contact: este impartita in doua coloane.
+         In stanga sunt datele restaurantului, iar in dreapta este formularul
+         prin care clientii pot trimite intrebari sau mesaje direct din site. -->
+    <div class="container-xxl py-6 contact-section">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="text-primary text-uppercase mb-2" data-i18n="contact_sub">Contacte</p>
+                    <h1 class="display-6 mb-4" data-i18n="contact_title">Ne poți găsi oricând</h1>
+                    <p class="mb-4" data-i18n="contact_intro">Ai o întrebare sau vrei să faci o comandă specială? Suntem aici să te ajutăm! Ne
+                        poți contacta prin telefon, email sau ne poți vizita direct la pizzerie.</p>
+
+                    <!-- Cardurile de contact sunt separate pe tipuri de informatie
+                         pentru scanare rapida: adresa, telefon si email. Iconitele
+                         ajuta vizitatorul sa gaseasca imediat metoda de contact dorita. -->
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i class="fa fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info-details">
+                            <h5 data-i18n="contact_address_title">Adresa noastră</h5>
+                            <p>Strada Ștefan cel Mare 5, Cahul</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i class="fa fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-info-details">
+                            <h5 data-i18n="contact_phone_title">Telefon Comenzi</h5>
+                            <p>0299 32 162</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="contact-info-details">
+                            <h5 data-i18n="contact_email_title">Email</h5>
+                            <p>contact@pizzalacuptor.md</p>
+                        </div>
+                    </div>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-primary rounded-circle me-2"
+                            href="https://www.facebook.com/pizza.cahul.md" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-primary rounded-circle me-2"
+                            href="https://www.instagram.com/dvdcontinental" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <!-- Formularul de contact colecteaza datele minime necesare:
+                         nume, email, subiect optional si mesaj. Campurile cu required
+                         sunt validate de browser inainte ca mesajul sa fie trimis. -->
+                    <div class="contact-form-card bg-white rounded-4 p-4 p-md-5 shadow-sm border border-light">
+                        <h4 class="mb-4 text-dark"><i class="far fa-paper-plane me-2 text-primary"></i><span data-i18n="contact_form_title">Trimite-ne un mesaj</span></h4>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="contactName" name="from_name"
+                                            placeholder="Numele Tău" data-i18n-placeholder="contact_name_placeholder" required>
+                                        <label for="contactName" data-i18n="contact_name_label">Numele Tău *</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="contactEmail" name="reply_to"
+                                            placeholder="Email-ul Tău" data-i18n-placeholder="contact_email_placeholder" required>
+                                        <label for="contactEmail" data-i18n="contact_email_label">Email-ul Tău *</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="contactSubject" name="subject"
+                                            placeholder="Subiect" data-i18n-placeholder="contact_subject_placeholder">
+                                        <label for="contactSub]ject" data-i18n="contact_subject_label">Subiect</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control contact-message-input" name="message" placeholder="Lasă un mesaj aici"
+                                            data-i18n-placeholder="contact_message_placeholder" id="contactMessage" required></textarea>
+                                        <label for="contactMessage" data-i18n="contact_message_label">Mesajul Tău *</label>
+                                    </div>
+                                </div>
+                                <div id="contactFormStatus" class="col-12 is-hidden"></div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3 contact-submit-btn" type="submit"
+                                        id="contactSubmitBtn">
+                                        <i class="fas fa-paper-plane me-2"></i> <span data-i18n="contact_submit_btn">Trimite Mesaj</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Zona hartii completeaza informatiile de contact cu localizarea exacta.
+                 Embed-ul Google Maps permite clientilor sa deschida rapid ruta spre pizzerie. -->
+            <div class="text-center mx-auto mt-5 pt-5 wow fadeInUp contact-map-heading" data-wow-delay="0.1s">
+                <p class="text-primary text-uppercase mb-2" data-i18n="contact_map_sub">Harta</p>
+                <h2 class="mb-4" data-i18n="contact_map_title">Unde ne găsești pe hartă</h2>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <iframe class="contact-map-frame w-100 rounded shadow-sm"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2776.143125383229!2d28.2010716!3d45.908448199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b65cbe56c7c7df%3A0xdf8e6fb79ddfa758!2sPIZZA%20%22DVD%20Continental%22!5e0!3m2!1sru!2s!4v1771434435581!5m2!1sru!2s"
+                        frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Banner de conversie: incurajeaza vizitatorul sa sune pentru comanda dupa
+         ce a vazut informatiile de contact, fara sa fie nevoit sa caute iar telefonul. -->
+    <div class="pizza-banner wow fadeIn" data-wow-delay="0.1s">
+        <div class="pizza-banner-overlay"></div>
+        <div class="pizza-banner-content">
+            <p class="pizza-banner-sub" data-i18n="banner_sub">Gătit cu pasiune, servit cu drag</p>
+            <h2 class="pizza-banner-title" data-i18n="banner_title">Pizza adevărată te așteaptă!</h2>
+            <p class="pizza-banner-text" data-i18n="banner_text">Ingrediente proaspete, cuptor pe lemne și rețete autentice italiene.<br><span data-i18n="banner_text2">Comandă acum și savurează fiecare felie.</span></p>
+            <a href="tel:029932162" class="pizza-banner-btn">
+                <i class="fa fa-phone-alt me-2"></i> <span data-i18n="banner_btn">Comandă acum — 0299 32 162</span>
+            </a>
+        </div>
+    </div>
+    
+
+    
+    <!-- Subsolul repeta informatiile esentiale: contact, program si linkuri rapide.
+         Aceasta zona este utila mai ales pentru utilizatorii care ajung la finalul paginii. -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5 justify-content-center m-0">
+                
+                <div class="col-lg-4 col-md-6 text-center text-start-lg">
+                    <h4 data-i18n="footer_contact_title">Contactează-ne</h4>
+                    <div class="d-flex flex-column align-items-center align-items-start-lg gap-2">
+                        <div class="footer-contact-item">
+                            <i class="fa fa-map-marker-alt"></i>
+                            <span>Strada Ștefan cel Mare 5, Cahul</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fa fa-phone-alt"></i>
+                            <a href="tel:029932162">0299 32 162</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:contact@pizzalacuptor.md">contact@pizzalacuptor.md</a>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center justify-content-lg-start pt-4">
+                        <a class="footer-social-btn" href="https://www.instagram.com/dvdcontinental" target="_blank"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="footer-social-btn" href="https://www.facebook.com/pizza.cahul.md" target="_blank"
+                            aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="col-lg-4 col-md-6 text-center">
+                    <h4 data-i18n="footer_hours_title">Program de Lucru</h4>
+                    <div class="footer-working-hours text-center">
+                        <i class="far fa-clock"></i>
+                        <p class="mb-1 fw-bold text-white" data-i18n="footer_days">Luni - Duminică</p>
+                        <p class="mb-0 text-primary fw-bold footer-hours-time">10:00 - 22:00</p>
+                    </div>
+                </div>
+
+                
+                <div class="col-lg-4 col-md-6 text-center text-start-lg">
+                    <h4 data-i18n="footer_links_title">Link-uri Rapide</h4>
+                    <div class="d-flex flex-column align-items-center align-items-start-lg">
+                        <a class="btn btn-link" href="index.html" data-i18n="nav_home">Acasă</a>
+                        <a class="btn btn-link" href="index.html#menu-section" data-i18n="footer_menu_link">Meniu Pizza</a>
+                        <a class="btn btn-link" href="about.html" data-i18n="footer_about_link">Despre noi</a>
+                        <a class="btn btn-link" href="contact.html" data-i18n="footer_contact_link">Contactează-ne</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a href='index.html' class='copyright-brand-link'><b> MI PIACE </b></a> <span data-i18n="footer_copyright_text">Totul pregatit pentru tine!</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end" data-i18n="footer_tekwill">
+                    Acest website a fost realizat în cadrul competiției ”Tekwill Junior Ambassadors”
+                    organizat de proiectul ”Tekwill în Fiecare Școală”
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <button class="floating-cart-btn" id="floatingCartBtn">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+
+    
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h4 data-i18n="cart_title">Coșul Meu</h4>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <p class="text-center text-muted my-4" data-i18n="cart_empty">Coșul este gol.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span data-i18n="cart_total">Total:</span>
+                <span id="cartTotal">0 lei</span>
+            </div>
+            <div class="d-flex justify-content-between gap-2">
+                <button class="clear-cart-btn" id="clearCartBtn" data-i18n-title="cart_clear_title" title="Golește coșul"><i
+                        class="fas fa-trash-alt"></i></button>
+                <button class="checkout-btn flex-grow-1 m-0" id="checkoutBtn" data-i18n="cart_checkout">Trimite Comanda</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="adminStatusBar" class="admin-status-bar is-hidden">
+        <div class="admin-status-content">
+            <span><i class="fas fa-user-shield me-2"></i> <span data-i18n="admin_mode_active">Mod Administrare Activat</span> (<strong
+                    id="adminUserEmail"></strong>)</span>
+            <button id="adminLogoutBtn" class="admin-btn-logout"><i class="fas fa-sign-out-alt me-1"></i>
+                <span data-i18n="admin_logout">Ieșire</span></button>
+        </div>
+    </div>
+
+    
+    <div id="adminLoginModal" class="admin-inline-modal is-hidden">
+        <div class="admin-modal-box">
+            <div class="admin-modal-header">
+                <h3><i class="fas fa-lock me-2"></i> <span data-i18n="admin_login_title">Autentificare Admin</span></h3>
+                <button class="admin-modal-close" onclick="closeInlineModal('adminLoginModal')">&times;</button>
+            </div>
+            <form id="inlineLoginForm" class="admin-modal-form">
+                <div class="admin-form-group">
+                    <label for="inlineEmail" data-i18n="admin_email_label">Email</label>
+                    <input type="email" id="inlineEmail" placeholder="admin@mipiace.md" required autocomplete="email">
+                </div>
+                <div class="admin-form-group">
+                    <label for="inlinePassword" data-i18n="admin_password_label">Parolă</label>
+                    <input type="password" id="inlinePassword" placeholder="••••••••" required
+                        autocomplete="current-password">
+                </div>
+                <div id="inlineLoginError" class="admin-error-msg is-hidden"></div>
+                <button type="submit" class="admin-btn-submit" id="inlineLoginSubmitBtn" data-i18n="admin_login_btn">Conectare</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div id="inlineProductModal" class="admin-inline-modal is-hidden">
+        <div class="admin-modal-box admin-modal-large">
+            <div class="admin-modal-header">
+                <h3 id="inlineProductModalTitle"><i class="fas fa-plus-circle me-2"></i> <span data-i18n="product_modal_add_title">Adaugă Produs Nou</span></h3>
+                <button class="admin-modal-close" onclick="closeInlineModal('inlineProductModal')">&times;</button>
+            </div>
+            <form id="inlineProductForm" class="admin-modal-form">
+                <input type="hidden" id="inlineProductId">
+
+                <div class="admin-form-row">
+                    <div class="admin-form-group">
+                        <label for="inlineProductName" data-i18n="product_name_label">Nume produs *</label>
+                        <input type="text" id="inlineProductName" placeholder="ex: Pizza Capriciosa" data-i18n-placeholder="product_name_placeholder" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="inlineProductCategory" data-i18n="product_category_label">Categorie *</label>
+                        <select id="inlineProductCategory" required>
+                            <option value="" data-i18n="cat_choose">— Alege categoria —</option>
+                            <option value="pizza" data-i18n="cat_pizza">Pizza</option>
+                            <option value="bauturi" data-i18n="cat_bauturi">Băuturi</option>
+                            <option value="bucate_calde" data-i18n="cat_bucate_calde">Bucate Calde</option>
+                            <option value="salate" data-i18n="cat_salate">Salate</option>
+                            <option value="patiserie" data-i18n="cat_patiserie">Patiserie</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="admin-form-row">
+                    <div class="admin-form-group">
+                        <label for="inlineProductPrice" data-i18n="product_price_label">Preț (lei) *</label>
+                        <input type="number" id="inlineProductPrice" placeholder="125" step="0.01" min="0" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="inlineProductOrder" data-i18n="product_order_label">Ordine afișare</label>
+                        <input type="number" id="inlineProductOrder" placeholder="0" min="0" value="0">
+                    </div>
+                </div>
+
+                <div class="admin-form-group">
+                    <label for="inlineProductDescription" data-i18n="product_description_label">Descriere</label>
+                    <textarea id="inlineProductDescription" rows="3"
+                        placeholder="Ingrediente, gramaj etc..." data-i18n-placeholder="product_description_placeholder"></textarea>
+                </div>
+
+                <div class="admin-form-group">
+                    <label for="inlineProductImage" data-i18n="product_image_label">Cale Imagine / URL</label>
+                    <input type="text" id="inlineProductImage" placeholder="ex: img/pizza.jpg" data-i18n-placeholder="product_image_placeholder">
+                </div>
+
+                <div class="admin-form-group checkbox-wrapper">
+                    <label class="admin-checkbox-label">
+                        <input type="checkbox" id="inlineProductAvailable" checked>
+                        <span data-i18n="product_available">Disponibil pe site (vizibil)</span>
+                    </label>
+                </div>
+
+                <div class="admin-modal-footer">
+                    <button type="button" class="admin-btn-secondary"
+                        onclick="closeInlineModal('inlineProductModal')" data-i18n="product_cancel">Anulează</button>
+                    <button type="submit" class="admin-btn-primary" id="inlineProductSaveBtn" data-i18n="product_save">Salvează</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+    <div id="inlineDeleteModal" class="admin-inline-modal is-hidden">
+        <div class="admin-modal-box admin-modal-danger">
+            <div class="admin-modal-header">
+                <h3><i class="fas fa-exclamation-triangle me-2"></i> <span data-i18n="delete_title">Ștergere Produs</span></h3>
+                <button class="admin-modal-close" onclick="closeInlineModal('inlineDeleteModal')">&times;</button>
+            </div>
+            <div class="admin-modal-body text-center p-4">
+                <p data-i18n="delete_confirm_text">Sigur dorești să ștergi produsul:</p>
+                <h4 id="inlineDeleteProductName" class="inline-delete-product-name"></h4>
+                <p class="small text-muted" data-i18n="delete_warning">Această acțiune este permanentă și ireversibilă!</p>
+            </div>
+            <div class="admin-modal-footer">
+                <button type="button" class="admin-btn-secondary"
+                    onclick="closeInlineModal('inlineDeleteModal')" data-i18n="delete_cancel">Anulează</button>
+                <button type="button" class="admin-btn-danger" id="inlineConfirmDeleteBtn" data-i18n="delete_confirm_btn">Șterge definitiv</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="checkoutModal" class="admin-inline-modal is-hidden">
+        <div class="admin-modal-box">
+            <div class="admin-modal-header checkout-header-success">
+                <h3 class="checkout-title-light"><i class="fas fa-shopping-bag me-2"></i> <span data-i18n="checkout_title">Finalizează Comanda</span></h3>
+                <button class="admin-modal-close" onclick="closeInlineModal('checkoutModal')">&times;</button>
+            </div>
+            <form id="checkoutForm" class="admin-modal-form">
+                <div id="checkoutSummary" class="checkout-summary">
+                    
+                </div>
+                <div class="admin-form-group">
+                    <label for="checkoutName"><i class="fas fa-user me-1"></i> <span data-i18n="checkout_name_label">Numele tău *</span></label>
+                    <input type="text" id="checkoutName" placeholder="ex: Ion Popescu" data-i18n-placeholder="checkout_name_placeholder" required>
+                </div>
+                <div class="admin-form-group">
+                    <label for="checkoutPhone"><i class="fas fa-phone me-1"></i> <span data-i18n="checkout_phone_label">Telefon *</span></label>
+                    <input type="tel" id="checkoutPhone" placeholder="ex: 069 123 456" data-i18n-placeholder="checkout_phone_placeholder" required>
+                </div>
+                <div class="admin-form-group">
+                    <label for="checkoutAddress"><i class="fas fa-map-marker-alt me-1"></i> <span data-i18n="checkout_address_label">Adresa de livrare (opțional)</span></label>
+                    <input type="text" id="checkoutAddress" placeholder="ex: str. Ștefan cel Mare 15, ap. 3" data-i18n-placeholder="checkout_address_placeholder">
+                </div>
+                <div class="admin-form-group">
+                    <label for="checkoutNotes"><i class="fas fa-comment me-1"></i> <span data-i18n="checkout_notes_label">Observații (opțional)</span></label>
+                    <textarea id="checkoutNotes" rows="2" placeholder="ex: fără ceapă, etaj 3" data-i18n-placeholder="checkout_notes_placeholder"></textarea>
+                </div>
+                <div id="checkoutError" class="admin-error-msg is-hidden"></div>
+                <button type="submit" class="admin-btn-submit checkout-submit-success" id="checkoutSubmitBtn">
+                    <i class="fas fa-paper-plane me-2"></i> <span data-i18n="checkout_submit">Trimite Comanda</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div id="inlineOrdersModal" class="admin-inline-modal is-hidden">
+        <div class="admin-modal-box admin-modal-xlarge">
+            <div class="admin-modal-header inline-orders-header">
+                <h3><i class="fas fa-clipboard-list me-2"></i> <span data-i18n="orders_modal_title">Panou Comenzi (Mod Admin)</span></h3>
+                <div class="inline-orders-toolbar">
+                    <select id="inlineFilterOrderStatus" class="admin-select inline-orders-filter">
+                        <option value="toate" data-i18n="orders_status_all">Toate statusurile</option>
+                        <option value="nouă" data-i18n="orders_status_new"> Noi</option>
+                        <option value="în pregătire" data-i18n="orders_status_preparing">În pregătire</option>
+                        <option value="finalizată" data-i18n="orders_status_done">Finalizate</option>
+                        <option value="anulată" data-i18n="orders_status_cancelled">Anulate</option>
+                    </select>
+                    <button id="inlineRefreshOrdersBtn" class="admin-btn-logout inline-refresh-btn"><i
+                            class="fas fa-sync-alt"></i></button>
+                </div>
+                <button class="admin-modal-close" onclick="closeInlineModal('inlineOrdersModal')">&times;</button>
+            </div>
+            <div class="admin-modal-body-scrollable" id="inlineOrdersContainer">
+                <div class="inline-loading-state">
+                    <i class="fas fa-spinner fa-spin fa-2x mb-3 inline-loading-icon"></i>
+                    <p data-i18n="menu_loading">Se încarcă comenzile...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripturile de baza ale paginii: Firebase salveaza mesajele in dashboard,
+         Bootstrap controleaza meniul responsive, iar fisierele i18n traduc textele. -->
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    
+    <script src="js/locales/ro.js"></script>
+    <script src="js/locales/ru.js"></script>
+    <script src="js/i18n.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <!-- Logica formularului de contact:
+         1. mesajul se salveaza in colectia Firestore "mesaje" pentru dashboard;
+         2. optional, daca sunt completate cheile EmailJS, mesajul se trimite si pe email;
+         3. utilizatorul primeste feedback vizual si formularul se reseteaza dupa trimitere. -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+        const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
+        const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+
+        if (EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+            emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const btn = document.getElementById('contactSubmitBtn');
+            const statusEl = document.getElementById('contactFormStatus');
+
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const subject = document.getElementById('contactSubject').value.trim();
+            const message = document.getElementById('contactMessage').value.trim();
+
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fas fa-spinner fa-spin me-2"></i> ${window.t('contact_js_sending')}`;
+            statusEl.style.display = 'none';
+
+            try {
+                if (typeof db !== 'undefined') {
+                    await db.collection('mesaje').add({
+                        nume: name,
+                        email: email,
+                        subiect: subject,
+                        mesaj: message,
+                        citit: false,
+                        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+                }
+            } catch (err) {
+                console.error('Eroare salvare Firestore:', err);
+            }
+
+            if (EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+                emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+                    .then(() => {
+                        statusEl.style.display = 'block';
+                        statusEl.innerHTML = `<div class="alert alert-success"><i class="fas fa-check-circle me-2"></i>${window.t('contact_js_success')}</div>`;
+                        this.reset();
+                        btn.innerHTML = `<i class="fas fa-check me-2"></i> ${window.t('contact_js_sent')}`;
+                        setTimeout(() => {
+                            btn.disabled = false;
+                            btn.innerHTML = `<i class="fas fa-paper-plane me-2"></i> ${window.t('contact_js_submit_default')}`;
+                        }, 3000);
+                    })
+                    .catch((error) => {
+                        console.error('EmailJS error:', error);
+                        statusEl.style.display = 'block';
+                        statusEl.innerHTML = `<div class="alert alert-warning"><i class="fas fa-exclamation-circle me-2"></i>${window.t('contact_js_email_error')}</div>`;
+                        this.reset();
+                        btn.disabled = false;
+                        btn.innerHTML = `<i class="fas fa-paper-plane me-2"></i> ${window.t('contact_js_submit_default')}`;
+                    });
+            } else {
+                statusEl.style.display = 'block';
+                statusEl.innerHTML = `<div class="alert alert-success"><i class="fas fa-check-circle me-2"></i>${window.t('contact_js_db_only')}</div>`;
+                this.reset();
+                btn.innerHTML = `<i class="fas fa-check me-2"></i> ${window.t('contact_js_sent')}`;
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = `<i class="fas fa-paper-plane me-2"></i> ${window.t('contact_js_submit_default')}`;
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+
+</html>
