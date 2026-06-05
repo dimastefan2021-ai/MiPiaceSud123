@@ -1,10 +1,11 @@
-/* ======= VARIABILE GLOBALE DE CULORI ======= */
+ /* ======= VARIABILE GLOBALE DE CULORI ======= */
 :root {
     --primary: #362c1a;
     --secondary: #545454;
     --light: #FDF5EB;
     --dark: #1E1916;
     --meniu: rgb(187, 133, 36);
+    --mobile-navbar-height: 71px;
 }
 
 /* ======= STILURI DE BAZĂ PENTRU HTML ȘI BODY ======= */
@@ -311,10 +312,6 @@ a:hover i {
     transform: scale(1.05);
 }
 
-.navbar.scrolled {
-    
-}
-
 .navbar.scrolled .logo-custom {
     height: 75px;
     margin-top: 0;
@@ -446,7 +443,6 @@ a:hover i {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     white-space: nowrap;
@@ -506,6 +502,10 @@ a:hover i {
 }
 
 @media (max-width: 1199.98px) {
+    body {
+        padding-top: var(--mobile-navbar-height);
+    }
+
     .top-bar {
         display: none;
     }
@@ -515,8 +515,12 @@ a:hover i {
     }
 
     .navbar {
-        position: relative;
-        height: auto;
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: var(--mobile-navbar-height);
+        min-height: var(--mobile-navbar-height);
         padding: 8px 15px;
         top: 0;
         background: linear-gradient(180deg, rgba(22, 18, 14, 0.98) 0%, rgba(30, 25, 22, 0.95) 100%);
@@ -529,18 +533,28 @@ a:hover i {
         margin-top: 0;
     }
 
+    .navbar .navbar-brand {
+        margin-left: 0 !important;
+        margin-right: 6px;
+    }
+
     .navbar-brand-text-mobile {
-        position: absolute;
-        left: 50%;
-        top: 36px;
-        transform: translate(-50%, -50%);
-        font-family: var(--font);
-        font-size: 1.2rem;
+        position: static;
+        transform: none;
+        flex: 1 1 auto;
+        min-width: 0;
+        margin-left: 8px;
+        margin-right: 8px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: clamp(0.85rem, 3.4vw, 1.05rem);
         font-weight: 700;
         color: var(--meniu);
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         text-shadow: 0 2px 10px rgba(187, 133, 36, 0.3);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         pointer-events: none;
         z-index: 10;
     }
@@ -548,17 +562,24 @@ a:hover i {
     .navbar-toggler {
         border: none;
         padding: 8px 12px;
+        margin-right: 0 !important;
         outline: none !important;
         box-shadow: none !important;
     }
 
     .navbar .navbar-collapse {
-        margin-top: 10px;
+        position: absolute;
+        top: var(--mobile-navbar-height);
+        left: 15px;
+        right: 15px;
+        margin-top: 0;
         background: rgba(30, 25, 22, 0.95);
         border-top: 2px solid var(--meniu);
         border-radius: 0 0 15px 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         animation: slideDown 0.4s ease forwards;
+        max-height: calc(100vh - var(--mobile-navbar-height) - 16px);
+        overflow-y: auto;
     }
 
     @keyframes slideDown {
@@ -1851,6 +1872,12 @@ body.admin-logged-in {
 
 body.admin-logged-in .fixed-top {
     margin-top: 45px !important;
+}
+
+@media (max-width: 1199.98px) {
+    body.admin-logged-in {
+        padding-top: calc(var(--mobile-navbar-height) + 45px) !important;
+    }
 }
 
 
