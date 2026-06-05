@@ -40,6 +40,33 @@
             }
         }
     });
+
+    function scrollToCurrentHash() {
+        if (window.location.hash !== '#menu-section' && window.location.hash !== '#despre-section') return;
+
+        var target = $(window.location.hash);
+        if (!target.length) return;
+
+        $('html, body').stop(true, true);
+        window.scrollTo({
+            top: Math.max(target.offset().top - 100, 0),
+            behavior: 'auto'
+        });
+    }
+
+    function scheduleHashScroll() {
+        scrollToCurrentHash();
+        if (window.requestAnimationFrame) {
+            window.requestAnimationFrame(scrollToCurrentHash);
+        }
+        setTimeout(scrollToCurrentHash, 40);
+        setTimeout(scrollToCurrentHash, 140);
+        setTimeout(scrollToCurrentHash, 320);
+    }
+
+    $(window).on('load hashchange', scheduleHashScroll);
+    scheduleHashScroll();
+
     window.siteSettingsData = null;
     window.applySiteSettings = function() {
         var data = window.siteSettingsData;
@@ -700,6 +727,7 @@
             });
             $('#menuLoading').remove();
             renderMenu();
+            scheduleHashScroll();
         } catch (err) {
             console.error('Eroare la încărcarea produselor din Firestore:', err);
             $('#menuGrid').html(`
@@ -930,6 +958,7 @@
 
         if ($('#menu-section').length > 0) {
             fetchProducts(); // Load products only on the menu page
+            scheduleHashScroll();
         }
         if (typeof auth !== 'undefined') {
             auth.onAuthStateChanged(function (user) {
