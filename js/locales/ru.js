@@ -314,6 +314,7 @@ window.LOCALES.ru = {
   js_deleting: "Удаление...",
   js_updating: "Обновить",
   js_add_to_cart: "Добавить в корзину",
+  js_added: "Заказ оформлен",
   dash_js_loading_products: "Загрузка продуктов...",
   dash_js_loading_orders: "Загрузка заказов...",
   dash_js_loading_messages: "Загрузка сообщений...",
