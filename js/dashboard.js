@@ -168,7 +168,6 @@
         $('statPizza').textContent = dbProducts.filter(p => p.categorie === 'pizza').length;
         $('statBauturi').textContent = dbProducts.filter(p => p.categorie === 'bauturi').length;
     }
-
     // Redă lista de produse în tabelul panoului de control al administratorului
     function renderProductsTable() {
         const cat = filterCategory.value;
