@@ -314,6 +314,7 @@ window.LOCALES.ro = {
   js_deleting: "Se șterge...",
   js_updating: "Actualizează",
   js_add_to_cart: "Adaugă în Coș",
+  js_added: "Comandă plasată",
   dash_js_loading_products: "Se încarcă produsele...",
   dash_js_loading_orders: "Se încarcă comenzile...",
   dash_js_loading_messages: "Se încarcă mesajele...",
